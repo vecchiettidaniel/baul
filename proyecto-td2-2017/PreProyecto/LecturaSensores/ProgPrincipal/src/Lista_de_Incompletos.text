@@ -1,0 +1,18 @@
+ #1)!!! Primero en papel!!! despues al teclado
+ #2) En lo posible sobrio..... o // para saber para que puse eso ahí!! 
+ 
+ #) Cambiar todos los Semaforos binarios por TaskNotify... FreeRTOS 9!!
+ 
+ #)	MenuFunciones.h
+ 	- En las funciones del Menu, siempre uso dos tipos de funciones, una que selecciona sensores ON/OFF y otra que cambia un valor
+ 	Por ahora lo que hago es copiar y pegar el codigo, y cambio la variable que quiero editar...
+ 	Habria que hacer una sola funcion para ON/OFF y otra para Actualizar Valor, y llamarlas pasando como argumento lo que quiero modificar
+ 	
+ 	- Cambiar el menu cuando muestro el ON/OFF, que se vea el estado de todos los sensores.
+ 	- Funcion Cambiar alarmas!!!!
+ 	- Mejorar el Efecto de salida de los menues (Guardando y Restableciendo)
+ 	
+ 	
+ #) GENERAL
+ 
+	- Ordenar el codigo armando el archivo sensores.h como en el modulo_USB  		 

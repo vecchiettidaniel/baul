@@ -1,0 +1,13 @@
+ #)	MenuFunciones.h
+ 	- En las funciones del Menu, siempre uso dos tipos de funciones, una que selecciona sensores ON/OFF y otra que cambia un valor
+ 	Por ahora lo que hago es copiar y pegar el codigo, y cambio la variable que quiero editar...
+ 	Habria que hacer una sola funcion para ON/OFF y otra para Actualizar Valor, y llamarlas pasando como argumento lo que quiero modificar
+ 	
+ 	- Cambiar el menu cuando muestro el ON/OFF, que se vea el estado de todos los sensores.
+ 	- Mostrar valores negativos en las Alarmas (o Armar en GLCD uno que muestre valores negativos y ya ta)
+ 	
+ #) GENERAL
+ 	- La conversion se hace respecto al valor de 0[ºC], ver para hacerlo desde un define o algo... esto porque si  no el 0 tiene
+ 	que estar dentro del rando de las 4096 cuentas (el valor de 0º no puede ser negativo!!!)
+ 	Tal vez hacer uno entre Max y Minimo a Medir y en lugar de Valor 0[ºC] un valor medio o Vo[ºC]...	
+ 		 

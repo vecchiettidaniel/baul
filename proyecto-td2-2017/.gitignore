@@ -1,0 +1,6 @@
+#Metadata es la carpeta del LPCxpresso
+**/.metadata/
+.metadata
+*.swp
+*/**/[Dd]ebug*/*
+*/**/.metadata*/*

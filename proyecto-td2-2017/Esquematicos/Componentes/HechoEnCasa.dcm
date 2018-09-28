@@ -1,0 +1,57 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LM2575-x
+D Switching Regulator
+K POWER
+F linear-tec/lt1108.pdf
+$ENDCMP
+#
+$CMP LM2940CT
+D Regulador Lineal 5V
+K regulador
+$ENDCMP
+#
+$CMP LPC1769
+D Stick LPC1769 con Jtag Pines y con Pines abajo
+K lpc1769
+$ENDCMP
+#
+$CMP LPC1769-54Pines
+D Stick LPC1769 Solo pines laterales
+K lpc1769
+$ENDCMP
+#
+$CMP MAX485
+D RS845 Transiver 
+K rs485
+$ENDCMP
+#
+$CMP Puente-Via
+D Para hacer un Puente Con un Cable
+K via-through hole
+$ENDCMP
+#
+$CMP REF19x
+D Voltage Reference
+K referencia
+$ENDCMP
+#
+$CMP TLV2171
+D 2x Op Amp de proposito general
+K opamp
+$ENDCMP
+#
+$CMP TLV4171
+D 4x Op Amp de proposito general
+K opamp
+$ENDCMP
+#
+$CMP TMP36
+D Low Voltage Temperature sensor
+$ENDCMP
+#
+$CMP TMP36_SOIC
+D Low Voltage Temperature sensor
+$ENDCMP
+#
+#End Doc Library

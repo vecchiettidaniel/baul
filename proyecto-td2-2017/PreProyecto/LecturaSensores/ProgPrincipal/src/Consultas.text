@@ -1,0 +1,57 @@
+ #) 	En varios lugares uso algo parecido a una variable global o a una memoria compartida
+ 	es decir tengo situaciones de Un Productor varios consumidores que solo leen y no borran
+ 	Lo tengo armado con colas de 1 elemento en donde el lector hace "peek" y el escritor hace "overwrite"
+ 	¿hay alguna forma mas eficiente de hacerlo?,¿si paso un puntero en la cola en lugar de los datos?, no estaria una tarea 
+ 	escribiendo en la memoria de la otra? salvo que defina como global...peroooo
+ 		---> COMO ESTE MICRO NO TIENE MPU NO HAY DRAMA EN ESCRIBIR EN CUALQUIER LADO DE LA MEMORIA,
+ 			PERO LAS TAREAS DEBERIAN SER INDEPENDIENTES, POR LO QUE SEGUIMOS CON LAS COLAS MEJOR
+ 	
+ #)		En MENUES.H tengo declaradas estructuras como globales, estas son fijas y no las voy a modificar,
+ 	si las declaro "const" ¿ya van derecho en la ROM, o como le hago para mandarlas ahí?
+ 		Lo mismo Pasa con GLCD_font5x8.h
+ 		---> SI CON CONST YA ESTAN EN LA ROM Y NO ME ROBAN RAM
+ 		
+ #)		Teclado.h Falta ver si se puede hacer todo independiente del FReeRTOS
+  	por ahora uso el semaforo para bloquear el programa y esperar a que
+   	se presione una tecla, tendria que armar funciones para que este
+   	bloqueo sea definido externamente...
+ 	
+ #)		MENUES
+	/*		Esto es lo que quisiera armar posta, pero no puedo porque en las definiciones de las variables
+	 * estoy usando variables/elementos que aún no estan creados, al compilar da error
+	 *
+	 * 		Ej.: en  MenuPapa_I[] estoy usando MenuHijo1 que aún no fue creada... no camina...
+	 *
+	 *	 typedef struct Menu_Menu
+	 *	{
+	 *		const char* 		MenuTexto;
+	 *		const Menu_Menu*	Menu_Papa;
+	 *		struct Menu_Item*	MenuItems;
+	 *	}Menu_Menu;
+	 *
+	 *	typedef struct Menu_Item
+	 *	{
+	 *		const char* 		ItemTexto;
+	 *		const Menu_Menu*	Menu_hijo;	//Sub Menu a llamar
+	 *		void(*accion)(void * pvParam,int xNItem); //accion o funcion
+	 *	}Menu_Item;
+	 *
+	 * const Menu_Menu  MenuPapa={"MENU PAPA",(Menu_Menu*)MENU_FIN,(Menu_Item*)MenuPapa_I};
+	 * const Menu_Menu  MenuHijo1={"SUBMENU HIJO 1",(Menu_Menu*)MenuPapa,(Menu_Item*)MenuHijo1_I};
+	 * const Menu_Menu  MenuHijo2={"SUBMENU HIJO 2",(Menu_Menu*)MenuPapa,(Menu_Item*)MenuHijo2_I};
+	 *
+	 * const Menu_Item MenuPapa_I[]={
+	 *		{"Menu Hijo 1",(Menu_Menu*)MenuHijo1,Menu_NOP},
+	 *		{"Menu Hijo 2",(Menu_Menu*)MenuHijo2,Menu_NOP},
+	 *	};
+	 *
+	 *	const Menu_Item MenuHijo1_I[]={
+	 *		{"Opcion 1 Hijo 1",MENU_FIN,funcion1},
+	 *		{"Opcion 2 Hijo 1",MENU_FIN,funcion2},
+	 *	};
+	 *
+	 *
+	 * 	para salvar esto es que uso la enum MENU_INDICE, y uso esos valores como referencia
+	 * 	Pero OJO que el orden que aparecen en la enum debe ser el mismo que al crear el array MENUTABLA[]{}
+	 */
+ #)
