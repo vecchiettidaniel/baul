@@ -1,0 +1,15 @@
+*/*.o
+*/*.cmd
+*/*.mod.*
+*/.tmp*
+*/modules.order
+*/Module.symvers
+/kernel_beagle
+*/*.ko
+*/*.elf
+*/*.html
+*/*.list
+*/*.lst
+*/*.log
+
+!.gitignore

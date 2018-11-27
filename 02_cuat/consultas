@@ -1,0 +1,17 @@
+	reg=of_iomap((op->dev).of_node,0);//por que of_node si no esta en la estructura
+	// para desmapear hay que hacer iounmap(void *addr) addr seria reg¿?...=> tendria que ser globla?¿
+	// o queda guardado en alguna de las estructuras anteriores
+
+-) Cortitas y al pie:
+	¿que devuelve kmalloc si huvo error?  
+	R: NULL
+-) La limpieza: por ahora limpio todo cuando hago el rmmode, pero que pasa si no llego a registrar el modulo?
+	- ej:	alloc_chardev_region	--> OK
+			cdev_alloc --------------->	ERROR y return -1
+	¿no tendria que desacer el alloc_chardev antes del return? si no como lo saco si no puedo hacer el rmmode
+	R: sips... cuando falla algo hay que ir removiendo pa atras
+
+-)	¿cual es la diferencia entre llenar la estructura cdev "a mano" o hacerlo con cdev_init()?...
+por lo que vi, init inicializa a cero la estructura, con lo que borraria lo que hizo ¿cdev_alloc?
+
+-)	El valor de retorno de device_create(), en caso de error es ERR_PTR() ¿? como se si se creo correctamente?
